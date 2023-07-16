@@ -1,14 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import userStateSlice from "./redux/userStateSlice";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import spinnerSlice from "./redux/spinnerSlice";
+const root = ReactDOM.createRoot(document.getElementById("root"));
+export let store = configureStore({
+  reducer: {
+    userSlice: userStateSlice,
+    spinnerSlice,
+  },
+});
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
