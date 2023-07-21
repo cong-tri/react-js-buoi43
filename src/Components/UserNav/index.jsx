@@ -27,7 +27,14 @@ function UserNav() {
           >
             Đăng nhập
           </button>
-          <button className={btnClass}>Đăng ký</button>
+          <button
+            className={btnClass}
+            onClick={() => {
+              window.location.href = "/register";
+            }}
+          >
+            Đăng ký
+          </button>
         </>
       );
     }

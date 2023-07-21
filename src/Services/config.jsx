@@ -13,6 +13,7 @@ export let https = axios.create({
 https.interceptors.request.use(
   function (config) {
     console.log("đi");
+    console.log(config);
     store.dispatch(batLoading());
     // Do something before request is sent
     return config;

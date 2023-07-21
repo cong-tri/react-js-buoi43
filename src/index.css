@@ -2,8 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 .container {
-  position: relative;
-  width: 90%;
+  width: 100%;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 0;
+}
+/* Default light mode */
+:root {
+  --font-color: #333;
+  --background-color: #eee;
+  --link-color: cornflowerblue;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --font-color: #eee;
+  --background-color: #333;
+  --link-color: lightblue;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
 }

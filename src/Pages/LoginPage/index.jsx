@@ -37,7 +37,7 @@ function LoginPage() {
       <div className="w-1/2 h-full">
         <Lottie animationData={bgAnimate} loop={true} />
       </div>
-      <div className="w-1/2 right-3 h-full">
+      <div className="w-1/2 justify-center items-center">
         <div className="container p-10">
           <Form
             name="basic"

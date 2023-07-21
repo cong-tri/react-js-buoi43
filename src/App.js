@@ -7,17 +7,29 @@ import NotFoundPage from "./Pages/404Page";
 import TabsMovie from "./Components/TabsMovie";
 import Footer from "./Components/Footer";
 import Spinner from "./Components/Spinner";
+import Layout from "./Layout";
+import RegisterPage from "./Pages/RegisterPage";
 function App() {
   return (
-    <div style={{ position: "relative" }}>
+    <div>
       <Spinner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<Layout contentPage={<HomePage />} />} />
+          <Route
+            path="/login"
+            element={<Layout contentPage={<LoginPage />} />}
+          />
+          <Route
+            path="/register"
+            element={<Layout contentPage={<RegisterPage />} />}
+          />
           <Route path="/list-movie" element={<ListMovie />} />
           <Route path="/tabs-movie" element={<TabsMovie />} />
-          <Route path="/detail/:id" element={<DetailMovie />} />
+          <Route
+            path="/detail/:id"
+            element={<Layout contentPage={<DetailMovie />} />}
+          />
           <Route path="/footer" element={<Footer />} />
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="*" element={<Navigate to={"/404"} />} />
